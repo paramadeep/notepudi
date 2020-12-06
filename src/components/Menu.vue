@@ -17,7 +17,7 @@
       <div class="setting">
         <SelectOptionMulti :label="$t('CLEF')" :items="clefOptions" v-model="options.clef"/>
       </div>
-      <div class="setting">
+      <!-- <div class="setting">
         <SelectOption
           :label="$t('ACCIDENTALS')"
           :items="accidentalOptions"
@@ -26,7 +26,7 @@
       </div>
       <div>
         <SelectOption :label="$t('LANGUAGE')" :items="languageOptions" v-model="options.language"/>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -65,8 +65,8 @@ export default {
       return [
         { value: 'treble', label: this.$t('trebleClef') },
         { value: 'bass', label: this.$t('bassClef') },
-        { value: 'alto', label: this.$t('altoClef') },
-        { value: 'tenor', label: this.$t('tenorClef') }
+        // { value: 'alto', label: this.$t('altoClef') },
+        // { value: 'tenor', label: this.$t('tenorClef') }
       ]
     },
     accidentalOptions () {
