@@ -1,6 +1,8 @@
 # notepudi
 
-> A Vue.js project
+> Learn Notes with Keyboad. Works using midi. 
+
+> Forked from awesome https://github.com/MelvilQ/noten-lernen
 
 ## Build Setup
 
@@ -24,4 +26,4 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Practice using https://paramadeep.github.io/notepudi/
