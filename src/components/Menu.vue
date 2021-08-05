@@ -64,7 +64,7 @@ export default {
     clefOptions () {
       return [
         { value: 'treble', label: this.$t('trebleClef') },
-        { value: 'bass', label: this.$t('bassClef') },
+        { value: 'bass', label: this.$t('bassClef') }
         // { value: 'alto', label: this.$t('altoClef') },
         // { value: 'tenor', label: this.$t('tenorClef') }
       ]

@@ -1,19 +1,17 @@
 <template>
   <div class="game-screen">
     <button class="quit" @click="quit">
-      {{$t('ABORT')}}
+      {{ $t("ABORT") }}
     </button>
     <ScoreLine
       :result="result"
       :timeLeft="timeLeft"
-      :isInfiniteRound="!options.gameLength" />
-    <FeedbackLine
-      :feedback="feedback"
-      :uniqueId="numAnswers" />
-    <NoteDisplay
-      :currentExercise="currentExercise" />
-    <RealDeviceInput
-      @solved="checkAnswer" />
+      :isInfiniteRound="!options.gameLength"
+    />
+
+    <FeedbackLine :feedback="feedback" :uniqueId="numAnswers" />
+      <RealDeviceInput @solved="checkAnswer" />
+      <NoteDisplay :currentExercise="currentExercise" />
   </div>
 </template>
 

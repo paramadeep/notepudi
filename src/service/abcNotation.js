@@ -12,10 +12,20 @@ const abcOctaveProcessor = {
   10: (x) => x.toLowerCase() + "''''"
 }
 
-var AbcNoteForMidiNote = (noteValue) => {
+const getBaseNoteWithIndex = (noteValue) => {
   const baseNote = baseNotes[noteValue % 12]
   const octaveIndex = Math.floor(noteValue / 12)
+  return { baseNote, octaveIndex }
+}
+
+var AbcNoteForMidiNote = (noteValue) => {
+  const { baseNote, octaveIndex } = getBaseNoteWithIndex(noteValue)
   return abcOctaveProcessor[octaveIndex](baseNote)
+}
+
+export const DisplayNote = (noteValue) => {
+  const { baseNote, octaveIndex } = getBaseNoteWithIndex(noteValue)
+  return `${baseNote}${octaveIndex}`
 }
 
 export default AbcNoteForMidiNote

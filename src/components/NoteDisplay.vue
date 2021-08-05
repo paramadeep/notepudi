@@ -1,13 +1,20 @@
 <template>
+<div class="note-panel">
   <div id="note-display" />
+  <Suggestion :noteValue=noteValue />
+</div>
 </template>
 
 <script>
 import abcjs from 'abcjs'
 import AbcNoteForMidiNote from '../service/abcNotation'
+import Suggestion from './Suggestion'
 
 export default {
   name: 'NoteDisplay',
+  components: {
+    Suggestion
+  },
   props: {
     currentExercise: Object
   },
@@ -19,6 +26,9 @@ export default {
         '\n' +
         AbcNoteForMidiNote(this.currentExercise.value)
       )
+    },
+    noteValue () {
+      return this.currentExercise.value
     }
   },
   watch: {
@@ -42,9 +52,12 @@ export default {
 
 <style scoped>
 #note-display {
-  margin: 0 auto;
   min-height: 225px;
   max-height: 225px;
   cursor: pointer;
+}
+.note-panel {
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>

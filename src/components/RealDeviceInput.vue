@@ -1,5 +1,5 @@
 <template>
-    <div>   {{displayPressed}}   </div>
+    <div :style=displayStyle > Keyboard not found, Refresh or Reconnect Keyboad </div>
 </template>
 
 <script>
@@ -13,14 +13,8 @@ export default {
     }
   },
   computed: {
-    displayPressed () {
-      if (!this.isKeyBoardAvaialble) {
-        return 'Keyboard not found, Refresh or Reconnect Keyboad'
-      }
-      if (!this.currentInput) {
-        return 'Press key in Keyboard'
-      }
-      return 'keep trying'
+    displayStyle () {
+      return this.isKeyBoardAvaialble ? 'display:none' : 'color:red'
     },
     noteName () {
       return this.currentInput.note.name
