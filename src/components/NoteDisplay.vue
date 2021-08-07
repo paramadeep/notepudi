@@ -1,7 +1,7 @@
 <template>
 <div class="note-panel">
   <div id="note-display" />
-  <Suggestion :noteValue=noteValue />
+  <Suggestion :hints=hints :noteValue=noteValue />
 </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
     Suggestion
   },
   props: {
-    currentExercise: Object
+    currentExercise: Object,
+    hints: Array
   },
   computed: {
     abc () {

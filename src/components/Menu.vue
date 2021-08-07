@@ -17,6 +17,9 @@
       <div class="setting">
         <SelectOptionMulti :label="$t('CLEF')" :items="clefOptions" v-model="options.clef"/>
       </div>
+       <div class="setting">
+        <SelectOptionMulti label='HINT' :items="hintOptions" v-model="options.hint"/>
+      </div>
       <!-- <div class="setting">
         <SelectOption
           :label="$t('ACCIDENTALS')"
@@ -69,27 +72,19 @@ export default {
         // { value: 'tenor', label: this.$t('tenorClef') }
       ]
     },
+    hintOptions () {
+      return [
+        {value: 'none', label: 'None'},
+        {value: 'note', label: 'Note'},
+        {value: 'keyboard', label: 'Keyboard'}
+      ]
+    },
     accidentalOptions () {
       return [
         { value: 'no', label: this.$t('none') },
         { value: 'onlySharp', label: this.$t('sharp') },
         { value: 'onlyFlat', label: this.$t('flat') },
         { value: 'sharpAndFlat', label: this.$t('sharpAndFlat') }
-      ]
-    },
-    soundOptions () {
-      return [
-        { value: false, label: this.$t('off') },
-        { value: true, label: this.$t('on') }
-      ]
-    },
-    languageOptions () {
-      return [
-        { value: 'en', label: 'EN' },
-        { value: 'de', label: 'DE' },
-        { value: 'fr', label: 'FR' },
-        { value: 'pl', label: 'PL' }
-        // { value: "ln", label: "LN" }
       ]
     }
   },

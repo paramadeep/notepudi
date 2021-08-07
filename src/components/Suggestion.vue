@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div>{{ displayNote }}</div>
-<Keyboard :noteValue=noteValue />
+  <h1 v-if="showNote">{{ displayNote }}</h1>
+<Keyboard v-if="showKeyboard" :noteValue=noteValue />
 </div>
 </template>
 
@@ -12,7 +12,8 @@ import {DisplayNote} from '../service/abcNotation'
 export default {
   name: 'NoteDisplay',
   props: {
-    noteValue: null
+    noteValue: Number,
+    hints: Array
   },
   components: {
     Keyboard
@@ -20,6 +21,12 @@ export default {
   computed: {
     displayNote () {
       return DisplayNote(this.noteValue)
+    },
+    showNote () {
+      return this.hints.includes('note')
+    },
+    showKeyboard () {
+      return this.hints.includes('keyboard')
     }
   }
 }

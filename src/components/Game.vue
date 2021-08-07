@@ -11,7 +11,7 @@
 
     <FeedbackLine :feedback="feedback" :uniqueId="numAnswers" />
       <RealDeviceInput @solved="checkAnswer" />
-      <NoteDisplay :currentExercise="currentExercise" />
+      <NoteDisplay :currentExercise="currentExercise" :hints="options.hint" />
   </div>
 </template>
 

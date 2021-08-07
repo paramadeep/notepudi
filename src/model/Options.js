@@ -5,6 +5,7 @@ export default {
   clef: ['treble'],
   accidentals: 'no',
   language: null,
+  hint: [],
 
   loadOptions () {
     const loadedOptions = Lockr.get('options')
